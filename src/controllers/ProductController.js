@@ -20,7 +20,7 @@ export default class ProductController {
     static async editProduct(req, res) {
         const { _id, name, quantity, description } = req.body;
         const product = await Product.findById(_id);
-        if (!product) {q
+        if (!product) {
             return res.json({ message: "Não existe um produto com este id!" });
         }
         const updateFields = {};
