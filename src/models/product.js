@@ -7,4 +7,4 @@ const productShema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 });
 
-export const Product = mongoose.model("user", productShema);
+export const Product = mongoose.model("products", productShema);
