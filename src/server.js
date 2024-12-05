@@ -15,6 +15,7 @@ import testRouter from "./routes/TestRoute.js";
 import productrouter from "./routes/ProductRouter.js";
 import musicaRouter from "./routes/MusicaRouter.js";
 import userRouter from "./routes/UserRouter.js";
+import pokemonRouter from "./routes/PokemonRouter.js";
 
 // procurando arquivos
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +40,7 @@ app.use("/exemplo", testRouter);
 app.use("/products", productrouter);
 app.use("/auth", userRouter);
 app.use("/musicas", musicaRouter);
+app.use("/pokemons", pokemonRouter);
 
 //servindo uma pagina no html
 app.use(express.static(path.join(__dirname, "public")));
