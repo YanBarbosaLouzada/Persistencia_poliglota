@@ -6,7 +6,7 @@ export default class PokemonController {
     // Criando função de pegar pokemons
     static async getPokemon(req, res) {
         try {
-            const pokemons = await axios.get("");
+            const pokemons = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0");
             return res.status(200).json(pokemons.data);
         } catch (error) {
             return res.status(500).json({ message: "Internal Server Error" });

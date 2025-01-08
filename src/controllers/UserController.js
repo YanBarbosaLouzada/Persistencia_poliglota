@@ -86,8 +86,6 @@ export default class UserController {
             if (err) {
                 return res.status(403).json({ message: "Token inválido" });
             }
-
-            console.log("Token decodificado:", user); // Debug
             req.user = user;
             next();
         });
