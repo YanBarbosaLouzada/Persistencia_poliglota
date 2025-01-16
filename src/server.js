@@ -54,9 +54,9 @@ io.on("connection", (socket) => {
     socket.on("set_username", (username) => {
         socket.data.username = username;
     });
-    socket.on("message", (text) => {
+    socket.on("message", (messageData) => {
         io.emit("receive_message", {
-            text,
+            ...messageData,
             authorId: socket.id,
             author: socket.data.username,
         });
@@ -66,6 +66,7 @@ io.on("connection", (socket) => {
 server.listen(8080, () => {
     console.log("Socket.IO server running on port 8080");
 });
+
 
 //colocando rota em uso
 app.use("/exemplo", testRouter);
